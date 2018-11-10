@@ -26,3 +26,16 @@ import matplotlib.pyplot as plt
 data_path = './data/'
 
 imgs = np.empty((256, 256), int)
+
+filenames = sorted(os.listdir(data_path))
+classificationLabels = []
+count = 0
+for img_name in filenames:
+    img = plt.imread(data_path + img_name)
+    img  = np.resize(img, (256, 256))
+    if count == 0:
+	imgs=(img)
+	count = 1
+    else:
+    	imgs = np.append(imgs, img, axis=0)
+    classificationLabels.append(int(img_name[1]))
