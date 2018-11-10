@@ -102,3 +102,15 @@ inChannel = 1
 x, y = 256,256
 input_img = Input(shape = [x,y,inChannel])
 print(input_img)
+
+def autoencoder(input_img):
+	encoded = Dense(128, activation='relu')(input_img)
+	encoded = Dense(64, activation='relu')(encoded)
+	encoded = Dense(32, activation='relu')(encoded)
+
+	decoded = Dense(64, activation='relu')(encoded)
+	decoded = Dense(128, activation='relu')(decoded)
+	decoded= Dense(1, activation='relu')(decoded)
+	print(type(encoded))
+	print(type(decoded))
+	return decoded
