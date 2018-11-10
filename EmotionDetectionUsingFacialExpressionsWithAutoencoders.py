@@ -122,3 +122,4 @@ autoencoder.summary()
 print(train_data.shape)
 autoencoder_train = autoencoder.fit(train_data, train_data, batch_size=batch_size,epochs=epochs,verbose=1,validation_data=(test_data, test_data))
 
+autoencoder.evaluate(test_data, test_labels_one_hot)
