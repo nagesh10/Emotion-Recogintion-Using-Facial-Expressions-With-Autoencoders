@@ -39,3 +39,8 @@ for img_name in filenames:
     else:
     	imgs = np.append(imgs, img, axis=0)
     classificationLabels.append(int(img_name[1]))
+
+imgs = np.reshape(imgs, [213, 256, 256])
+print(imgs.shape)
+
+train_images, test_images, train_labels, test_labels = train_test_split(imgs, d, test_size=0.33, random_state=42)
