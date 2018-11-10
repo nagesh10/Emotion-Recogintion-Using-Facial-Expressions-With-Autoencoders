@@ -22,3 +22,7 @@ from keras import optimizers
 
 import numpy as np
 import matplotlib.pyplot as plt
+
+data_path = './data/'
+
+imgs = np.empty((256, 256), int)
