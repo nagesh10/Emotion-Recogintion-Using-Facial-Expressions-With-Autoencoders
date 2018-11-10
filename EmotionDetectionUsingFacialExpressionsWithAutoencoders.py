@@ -95,3 +95,10 @@ print(type(train_labels))
 
 print('Original label 0 : ', train_labels[0])
 print('After conversion to categorical ( one-hot ) : ', train_labels_one_hot[0])
+
+batch_size = 40
+epochs = 50
+inChannel = 1
+x, y = 256,256
+input_img = Input(shape = [x,y,inChannel])
+print(input_img)
