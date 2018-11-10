@@ -61,3 +61,7 @@ print('Total number of outputs : ', nClasses)
 print('Output classes : ', classes)
 
 plt.figure(figsize=[4,2])
+
+plt.subplot(121)
+plt.imshow(train_images[0,:,:], cmap='gray')
+plt.title("Ground Truth : {}".format(train_labels[0]))
