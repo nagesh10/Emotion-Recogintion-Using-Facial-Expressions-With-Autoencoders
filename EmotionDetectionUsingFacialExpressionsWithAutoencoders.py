@@ -114,3 +114,11 @@ def autoencoder(input_img):
 	print(type(encoded))
 	print(type(decoded))
 	return decoded
+
+autoencoder = Model(input_img, autoencoder(input_img))
+autoencoder.compile(loss='mean_squared_error', optimizer = RMSprop())
+
+autoencoder.summary()
+print(train_data.shape)
+autoencoder_train = autoencoder.fit(train_data, train_data, batch_size=batch_size,epochs=epochs,verbose=1,validation_data=(test_data, test_data))
+
