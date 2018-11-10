@@ -86,3 +86,6 @@ test_data /= 255
 
 print(len(train_labels))
 print(len(test_labels))
+
+train_labels_one_hot = to_categorical(train_labels)
+test_labels_one_hot = to_categorical(test_labels)
